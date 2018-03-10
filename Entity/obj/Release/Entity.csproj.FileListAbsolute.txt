@@ -1,0 +1,14 @@
+C:\Users\LangKhach\source\repos\MobiZ\Entity\bin\Release\Entity.dll.config
+C:\Users\LangKhach\source\repos\MobiZ\Entity\bin\Release\Entity.dll
+C:\Users\LangKhach\source\repos\MobiZ\Entity\bin\Release\Entity.pdb
+C:\Users\LangKhach\source\repos\MobiZ\Entity\bin\Release\EntityFramework.dll
+C:\Users\LangKhach\source\repos\MobiZ\Entity\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\LangKhach\source\repos\MobiZ\Entity\bin\Release\EntityFramework.xml
+C:\Users\LangKhach\source\repos\MobiZ\Entity\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\LangKhach\source\repos\MobiZ\Entity\obj\Release\Entity.Migrations.Initial.resources
+C:\Users\LangKhach\source\repos\MobiZ\Entity\obj\Release\Entity.Migrations.updateshipadd.resources
+C:\Users\LangKhach\source\repos\MobiZ\Entity\obj\Release\Entity.csproj.GenerateResource.Cache
+C:\Users\LangKhach\source\repos\MobiZ\Entity\obj\Release\Entity.csproj.CoreCompileInputs.cache
+C:\Users\LangKhach\source\repos\MobiZ\Entity\obj\Release\Entity.dll
+C:\Users\LangKhach\source\repos\MobiZ\Entity\obj\Release\Entity.pdb
+C:\Users\LangKhach\source\repos\MobiZ\Entity\obj\Release\Entity.csprojResolveAssemblyReference.cache

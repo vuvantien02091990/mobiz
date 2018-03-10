@@ -1,0 +1,63 @@
+﻿@model List<Entity.Model.Product>
+    @{ 
+        var slide = ViewBag.slide;
+    }
+<div class="header_bottom">
+    <div class="header_bottom_left">
+        <section class="slider">
+            <div class="flexslider">
+                <ul class="slides">
+                    @foreach (var i in slide)
+                    {
+                        <li><img src="@i.Image" alt="" /></li>
+                    }
+                </ul>
+            </div>
+        </section>
+        <div class="clear"></div>
+    </div>
+    <div class="header_bottom_right_images">
+        <div class="section group">
+            <div class="listview_1_of_2 images_1_of_2">
+                <div class="listimg listimg_2_of_1">
+                    <a href="/chi-tiet/@Model[0].MetaTitle-@Model[0].ID"> <img src="@Model[0].Image" height="100" alt="" /></a>
+                </div>
+                <div class="text list_2_of_1">
+                    <h2>@Model[0].Name</h2>
+                    <div class="button"><span><a href="/chi-tiet/@Model[0].MetaTitle-@Model[0].ID">Mua ngay</a></span></div>
+                </div>
+            </div>
+            <div class="listview_1_of_2 images_1_of_2">
+                <div class="listimg listimg_2_of_1">
+                    <a href="/chi-tiet/@Model[1].MetaTitle-@Model[1].ID"><img src="@Model[1].Image" height="100" alt="" /></a>
+                </div>
+                <div class="text list_2_of_1">
+                    <h2>@Model[1].Name</h2>
+                    <div class="button"><span><a href="/chi-tiet/@Model[1].MetaTitle-@Model[1].ID">Mua ngay</a></span></div>
+                </div>
+            </div>
+        </div>
+        <div class="section group">
+            <div class="listview_1_of_2 images_1_of_2">
+                <div class="listimg listimg_2_of_1">
+                    <a href="/chi-tiet/@Model[2].MetaTitle-@Model[2].ID"> <img src="@Model[2].Image" height="100" alt="" /></a>
+                </div>
+                <div class="text list_2_of_1">
+                    <h2>@Model[2].Name</h2>
+                    <div class="button"><span><a href="/chi-tiet/@Model[2].MetaTitle-@Model[2].ID">Mụa ngay</a></span></div>
+                </div>
+            </div>
+            <div class="listview_1_of_2 images_1_of_2">
+                <div class="listimg listimg_2_of_1">
+                    <a href="/chi-tiet/@Model[3].MetaTitle-@Model[3].ID"><img src="@Model[3].Image" height="100" alt="" /></a>
+                </div>
+                <div class="text list_2_of_1">
+                    <h2>@Model[3].Name</h2>
+                    <div class="button"><span><a href="/chi-tiet/@Model[3].MetaTitle-@Model[3].ID">Mua ngay</a></span></div>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+</div>

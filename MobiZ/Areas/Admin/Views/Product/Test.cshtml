@@ -1,0 +1,73 @@
+﻿
+@{
+    ViewBag.Title = "Test";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+
+
+    <script src="/Scripts/plugins/mustache.min.js"></script>
+    <script src="/Scripts/controllers/product.js"></script>
+
+<h2>Test</h2>
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <td>
+                Tên Sản Phẩm
+            </td>
+            <td>
+                Hình sản phẩm
+            </td>
+            <td>
+                Giá
+            </td>
+            <td>
+                Category ID
+            </td>
+
+            <td>
+                Lựa chọn
+            </td>
+        </tr>
+    </thead>
+    <tbody id="tblData"></tbody>
+
+
+
+
+</table>
+<script id="template" type="x-tmpl-mustache">
+    <tr>
+        <td>{{Name}}</td>
+        <td>{{Img}}</td>
+        <td>{{Price}}</td>
+        <td>{{CategoryId}}</td>
+        <td>{{{Status}}}</td>
+    </tr>
+</script>
+
+@*<script>
+        $(doccument).ready(function () {
+            loadData: function()
+            {
+                $.ajax(
+                    {
+                        url: 'Product/Load',
+                        type: 'GET',
+                        dataType: 'json',
+                        success: function (reponse) {
+                            if (reponse.status == true)
+                            {
+                                var data = reponse.data;
+                                var html = '';
+
+                            }
+                        }
+                    }
+                );
+            }
+        });
+    </script>*@
+

@@ -1,0 +1,55 @@
+﻿@model List<Entity.Model.Product>
+
+@{
+    ViewBag.Title = "GetListProductCategory";
+    Layout = "~/Views/Shared/_myLayout.cshtml";
+    var category = ViewBag.Category;
+    var iPhone = ViewBag.Iphone;
+    var oppo = ViewBag.Oppo;
+    var samsung = ViewBag.Samsung;
+}
+
+<h2>@category.Name</h2>
+<div class="content_top">
+    <div class="heading">
+        <h2>
+            Tìm kiếm
+            <i class="dienthoai" style="font-family:Wingdings">
+                :
+            </i>
+        </h2>
+        @Html.ActionLink("Iphone", "GetListProductCategory",new { ViewBag.CurrentFilter } )
+    </div>
+    <div class="section-menu">
+        <ol>
+            <li><a href="#"><h2>Xem tất cả / </h2></a></li>
+        </ol>
+    </div>
+    <div class="clear"></div>
+</div>
+<div class="section group">
+    @foreach (var i in Model)
+    {
+        var url = "/chi-tiet/" + i.MetaTitle + "-" + i.ID;
+        <div class="grid_1_of_4 images_1_of_4">
+            <div class="discount">
+                <span class="percentage"></span>
+            </div>
+            <a href="@url"><img src="@i.Image" alt="" height="200" /></a>
+            <h2>@i.Name </h2>
+            @*<p>@i.Decriptions</p>*@
+            <p>@*<span class="strike">$528.22</span>*@<span class="price">@(i.Price.HasValue ? i.Price.Value.ToString("N0") : "Liên hệ")</span></p>
+
+            <div class="an">
+                <a href="@url" style="height:100%;width:100%;z-index:99;position: absolute;"></a>
+                <div class="decription" style="height:80%">
+                    <h4>@i.Name</h4>
+                    <p style="color:red">@(i.Price.HasValue ? i.Price.Value.ToString("N0") : "Liên hệ")</p>
+                    <p>@i.Decriptions</p>
+                </div>
+                <div class="button" style="margin-bottom: 5px;	"><span><img src="/Source/Client/images/cart.jpg" alt="" /><a href="@url" class="cart-button">MUA NGAY</a></span> </div>
+            </div>
+        </div>
+    }
+
+</div>

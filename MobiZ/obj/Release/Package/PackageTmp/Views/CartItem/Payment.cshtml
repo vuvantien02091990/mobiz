@@ -1,0 +1,58 @@
+﻿@model List<MobiZ.Models.CartItem>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_myLayout.cshtml";
+}
+<table class="table">
+    <thead>
+        <tr>
+            <td>Mã SP</td>
+            <td>Tên SP</td>
+            <td>Ảnh SP</td>
+            <td>Số lượng</td>
+            <td>Đơn giá</td>
+            <td>Thành tiền</td>
+            <td></td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+            {
+            <tr>
+                <td>@item.Product.Code</td>
+                <td>@item.Product.Name</td>
+                <td><img src="@item.Product.Image " height="100" /></td>
+                <td><input type="text" class="txtQuantity" data-id="@item.Product.ID" value="@item.Quantity" /></td>
+                <td>@item.Product.Price.GetValueOrDefault(0).ToString("N0")</td>
+                <td>@((item.Product.Price.GetValueOrDefault(0) * item.Quantity).ToString("N0"))</td>
+                <td><button class="btn btn-danger btn-delete" data-id="@item.Product.ID">Xóa</button></td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+
+<div class="section group">
+    <div class="col-md-6">
+        @using (Html.BeginForm("Payment", "CartItem", FormMethod.Post))
+        {
+            <div class="form-group">
+                <label>Người nhận</label>
+                <input name="ShipName" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Điện thoại</label>
+                <input name="ShipMobile" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Địa chỉ</label>
+                <input name="ShipMail" class="form-control" />
+            </div>
+           
+                <button type="submit" class="btn">Thanh toán</button>
+          
+        }
+    </div>
+   
+</div>
+

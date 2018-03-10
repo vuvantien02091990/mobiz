@@ -1,0 +1,71 @@
+﻿@model PagedList.IPagedList<Entity.Model.User>
+@using PagedList.Mvc
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+    @using (Html.BeginForm("Index", "Users", FormMethod.Get))
+    {
+        @Html.TextBox("SearchString", ViewBag.SearchString as string)
+        <button type="submit" class="btn btn-success">Tìm kiếm</button>
+    }
+
+<table class="table table-bordered" border="1">
+    <tr>
+        <th>
+            @Html.ActionLink("Tên Đăng nhập", "Index", new { sortOrder = ViewBag.UsernameSort })
+        </th>
+        <th>
+            @Html.ActionLink("Tên Hiển Thị","Index",new { sortOrder= ViewBag.NameSort})
+        </th>
+        <th>
+            Hình Đại Diện
+        </th>
+        <th>
+            Quyền Quản trị
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Username)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FullName)
+        </td>
+        <td>
+            <img src="@item.Avatar" width="100"/>
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AccessDeTail)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
+
+    <p>
+        <a href="~/Admin/Users/Create"><button class="btn btn-google" id="btn-create" data-toggle="modal" data-target="#myModal">Thêm người dùng</button></a>
+    </p>
+
+
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+
+@Html.PagedListPager(Model,page=>Url.Action("Index",new { page,sortOrder = ViewBag.CurrentSort,searchString = ViewBag.SearchString}))
+
+<style>
+    th{
+       color : green;
+    }
+
+</style>

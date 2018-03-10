@@ -1,0 +1,13 @@
+c:\Users\langkhach\source\repos\MobiZ\Entity\bin\Debug\Entity.dll.config
+c:\Users\langkhach\source\repos\MobiZ\Entity\bin\Debug\Entity.dll
+c:\Users\langkhach\source\repos\MobiZ\Entity\bin\Debug\Entity.pdb
+c:\Users\langkhach\source\repos\MobiZ\Entity\bin\Debug\EntityFramework.dll
+c:\Users\langkhach\source\repos\MobiZ\Entity\bin\Debug\EntityFramework.SqlServer.dll
+c:\Users\langkhach\source\repos\MobiZ\Entity\bin\Debug\EntityFramework.xml
+c:\Users\langkhach\source\repos\MobiZ\Entity\bin\Debug\EntityFramework.SqlServer.xml
+c:\Users\langkhach\source\repos\MobiZ\Entity\obj\Debug\Entity.csproj.CoreCompileInputs.cache
+c:\Users\langkhach\source\repos\MobiZ\Entity\obj\Debug\Entity.dll
+c:\Users\langkhach\source\repos\MobiZ\Entity\obj\Debug\Entity.pdb
+C:\Users\LangKhach\source\repos\MobiZ\Entity\obj\Debug\Entity.Migrations.Initial.resources
+C:\Users\LangKhach\source\repos\MobiZ\Entity\obj\Debug\Entity.csproj.GenerateResource.Cache
+C:\Users\LangKhach\source\repos\MobiZ\Entity\obj\Debug\Entity.Migrations.updateshipadd.resources

@@ -1,0 +1,103 @@
+﻿@model Entity.Model.Product
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@section jsFooter{
+    <script>
+        $(document).ready(function () {
+            $("#selectImg").on('click', function (e) {
+                e.preventDefault();
+               var finder = new CKFinder();
+                finder.selectActionFunction = function (url) {
+                    $("#txtImg").val(url);
+                };
+                finder.popup();              
+            });
+            var editor = CKEDITOR.replace('txtDetail', { customConfig: '/Source/ckeditor/config.js' });
+        });
+    </script>
+}
+
+<div class = "container-fluid">
+    <!-- Horizontal Form -->
+    <div class="box box-solid">
+        <div class="box-header with-border">
+            <h3 class="box-title">Thêm mới sản phẩm</h3>
+        </div>
+        <!-- /.box-header -->
+        <!-- form start -->
+        <form class="form-horizontal" method="post" action="Create" id="createForm2">
+            <div class="register-box-body">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Tên sản phẩm</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="Name" placeholder="Nhập tên sản phẩm" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Mã sản phẩm</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="Code" placeholder="Mã sản phẩm">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Tiêu đề sản phẩm</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="MetaTitle" placeholder="">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Decriptions</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="Decriptions" placeholder="">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Ảnh sản phẩm</label>
+                    <div class="col-sm-10">
+                        <input type="text" id="txtImg" name="Image" class="form-control" />
+                        <a id="selectImg"><button>Chọn ảnh</button></a>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Giá</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="Price" placeholder="Giá VNĐ">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Danh mục</label>
+                    <div class="col-sm-10">
+                        @Html.DropDownListFor(model=>model.CategoryID, ViewBag.CategoryId as SelectList, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Hãng</label>
+                    <div class="col-sm-10">
+                        @Html.DropDownListFor(model => model.ManufacturerID, ViewBag.ManufacturerID as SelectList, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Chi tiết sản phẩm</label>
+                    <div class="col-sm-10">
+                        <textarea id="txtDetail" name="Detail" class="form-control"></textarea>
+                    </div>
+                </div>
+
+            </div>
+            <!-- /.box-body -->
+            <div class="box-footer">
+                <button type="submit" class="btn btn-success center">Tạo</button>
+            </div>
+            <!-- /.box-footer -->
+        </form>
+    </div>
+</div>
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
